@@ -1,6 +1,6 @@
 # PyroCMS Twitter Bootstrap Plugin
 
-* For PyroCMS v2.1.x and below
+* For PyroCMS v2.2.x
 
 ## Description
 
