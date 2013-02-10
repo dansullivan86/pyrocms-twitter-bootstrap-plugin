@@ -23,14 +23,13 @@ CKEDITOR.plugins.add( 'bootstrap',
       editor.ui.addRichCombo( 'bootstrap',
          {
             label : "Bootstrap",
-            title :"Bootstrap",
             voiceLabel : "Bootstrap",
             className : 'cke_format',
             multiSelect : false,
 
             panel :
             {
-               css : [ config.contentsCss, CKEDITOR.getUrl( editor.skinPath + 'editor.css' ) ],
+               css : [ config.contentsCss, CKEDITOR.getUrl( 'skins/moono/editor.css' ) ],
                voiceLabel : lang.panelVoiceLabel
             },
 
@@ -58,10 +57,17 @@ CKEDITOR.plugins.add( 'bootstrap',
 Include this file:
    // get path of directory ckeditor
    var basePath = CKEDITOR.basePath;
-   basePath = basePath.substr(0, basePath.indexOf("ckeditor/")); 
+   basePath = basePath.substr(0, basePath.indexOf("ckeditor/"));
    (function() {
       CKEDITOR.plugins.addExternal('bootstrap',basePath+'../../../../../addons/shared_addons/themes/MY_THEME/js/', 'bootstrap-ckeditor.js');
    })();
+
+Edit
+protectedSource: /{{(\s)?.[^}]+(\s)?}}/g
+
+to be:
+
+protectedSource: /(?!({{\s?bootstrap:(.*)\s?}}))(?!({{\s?\/bootstrap:(.*)\s?}})){{(\s)?.[^}]+(\s)?}}/g
 
 Add 'bootstrap' to extra plugins:
    extraPlugins: 'pyroimages,pyrofiles,bootstrap',

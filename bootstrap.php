@@ -10,6 +10,331 @@
  */
 class Plugin_Bootstrap extends Plugin
 {
+	
+	public $version = '1.1.0';
+
+    public $name = array(
+        'en'    => 'Twitter Bootstrap Plugin',
+    );
+
+    public $description = array(
+        'en'    => 'Easily add Twitter Bootstrap components from the WYSIWYG. <a target="_new" href="http://www.embu.co.uk/twitter-bootstrap-plugin">Full Documentation available here</a>'     
+    );
+    
+    public function _self_doc()
+    {
+        $info = array(
+            'alert' => array(
+                'description' => array(
+                    'en' => 'Alert Component - Wrap any text for a basic warning alert message with dismiss button.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'style' => array(
+                        'type' => 'text',
+                        'flags' => 'error|success|info',
+                        'required' => true,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'align' => array(
+                'description' => array(
+                    'en' => 'Align - Float an element left or right.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'position' => array(
+                        'type' => 'text',
+                        'flags' => 'left|right',
+                        'required' => true,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'badge' => array(
+                'description' => array(
+                    'en' => 'Badge Component'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'style' => array(
+                        'type' => 'text',
+                        'flags' => 'success|warning|important|info|inverse',
+                        'required' => true,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'carousel' => array(
+                'description' => array(
+                    'en' => 'Carousel Component - This plugin requires the PyroCMS galleries module to be installed.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'slug' => array(
+                        'type' => 'text',
+                        'flags' => '',
+                        'required' => true,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'collapse' => array(
+                'description' => array(
+                    'en' => 'Collapse Component - Get base styles and flexible support for collapsible components, this is a simplified version of the twitter bootstrap collapse plugin designed for single elements of expanding content.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'title' => array(
+                        'type' => 'text',
+                        'flags' => '',
+                        'required' => true,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'emphasis' => array(
+                'description' => array(
+                    'en' => 'Emphasis - Convey meaning through colour with a handful of emphasis utility classes.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'style' => array(
+                        'type' => 'text',
+                        'flags' => 'muted|warning|error|info|success',
+                        'required' => true,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'hero' => array(
+                'description' => array(
+                    'en' => 'Hero Component - A lightweight, flexible component to showcase key content on your site. It works well on marketing and content-heavy sites.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'label' => array(
+                'description' => array(
+                    'en' => 'Label'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'style' => array(
+                        'type' => 'text',
+                        'flags' => 'success|warning|important|info|inverse',
+                        'required' => true,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'lead' => array(
+                'description' => array(
+                    'en' => 'Lead - Make a paragraph stand out.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'row' => array(
+                'description' => array(
+                    'en' => 'Row - Begin by adding a row then add as many spans as you require.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'span' => array(
+                'description' => array(
+                    'en' => 'Span - Begin by adding a row then add as many spans as you require.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'size' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'tabheader' => array(
+                'description' => array(
+                    'en' => 'Tab Header Component - wrap in {{ bootstrap:tabheaderwrap }} {{ /bootstrap:tabheaderwrap }} - Add quick, dynamic tab functionality to transition through panes of local content.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'title' => array(
+                        'type' => 'text',
+                        'flags' => '',
+                        'required' => true,
+                    ),
+                    'active' => array(
+                        'type' => 'text',
+                        'flags' => 'true|false',
+                        'required' => false,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'tabcontent' => array(
+                'description' => array(
+                    'en' => 'Tab Content Component - wrap in {{ bootstrap:tabcontentwrap }} {{ /bootstrap:tabcontentwrap }} - Add quick, dynamic tab functionality to transition through panes of local content.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'title' => array(
+                        'type' => 'text',
+                        'flags' => '',
+                        'required' => true,
+                    ),
+                    'active' => array(
+                        'type' => 'text',
+                        'flags' => 'true|false',
+                        'required' => false,
+                    ),
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            'well' => array(
+                'description' => array(
+                    'en' => 'Well Component - Use the well as a simple effect on an element to give it an inset effect.'
+                ),
+                'single' => false,
+                'double' => true,
+                'variables' => '',
+                'attributes' => array(
+                    'class' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                    'id' => array(
+                        'type' => 'text',
+                        'required' => false,
+                    ),
+                ),
+            ),
+        );
+    
+        return $info;
+    }
 
 	/**
 	 * Alert
