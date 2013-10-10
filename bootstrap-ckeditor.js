@@ -1,5 +1,5 @@
 CKEDITOR.plugins.add( 'bootstrap',
-{   
+{
    requires : ['richcombo'],
    init : function( editor )
    {
@@ -13,10 +13,10 @@ CKEDITOR.plugins.add( 'bootstrap',
       tags[3]=["{{ bootstrap:carousel slug=%27Gallery Slug%27 }}", "Carousel", "Carousel"];
       tags[4]=["{{ bootstrap:collapse title=%27My Title%27 }} My Content  {{ /bootstrap:collapse }}", "Collapse", "Collapse"];
       tags[5]=["{{ bootstrap:emphasis style=%27%27 }} My Content  {{ /bootstrap:emphasis }}", "Emphasis", "Emphasis"];
-      tags[6]=["{{ bootstrap:hero }} My Content  {{ /bootstrap:hero }}", "Hero", "Hero"];
+      tags[6]=["{{ bootstrap:jumbotron }} My Content  {{ /bootstrap:jumbotron }}", "Jumbotron", "Jumbotron"];
       tags[7]=["{{ bootstrap:label style=%27%27 }} My Content {{ /bootstrap:label }}", "Label", "Label"];
       tags[8]=["{{ bootstrap:lead }} My Content  {{ /bootstrap:lead }}", "Lead", "Lead"];
-      tags[9]=["{{ bootstrap:row }} {{ bootstrap:span size=%27%27 }} My Content  {{ /bootstrap:span }} {{ /bootstrap:row }}", "Row - Span", "Row - Span"];
+      tags[9]=["{{ bootstrap:row }} {{ bootstrap:col md_size=%27%27 }} My Content  {{ /bootstrap:col }} {{ /bootstrap:row }}", "Row - Col", "Row - Col"];
       tags[10]=["{{ bootstrap:tabheaderwrap }}<p>{{ bootstrap:tabheader title=%27Tab One%27 active=%27true%27 }}</p><p>{{ bootstrap:tabheader title=%27Tab Two%27 }}</p><p>{{ /bootstrap:tabheaderwrap }}</p><p>{{ bootstrap:tabcontentwrap }}</p><p>{{ bootstrap:tabcontent title=%27Tab One%27 active=%27true%27 }}Tab one contents goes here{{ /bootstrap:tabcontent }}</p><p>{{ bootstrap:tabcontent title=%27Tab Two%27 }} Tab two contents goes here{{ /bootstrap:tabcontent }}</p><p>{{ /bootstrap:tabcontentwrap }}</p>", "Tabs", "Tabs"];
       tags[11]=["{{ bootstrap:well }} My Content  {{ /bootstrap:well }}", "Well", "Well"];
 
@@ -42,7 +42,7 @@ CKEDITOR.plugins.add( 'bootstrap',
             },
 
             onClick : function( value )
-            {         
+            {
                editor.focus();
                editor.fire( 'saveSnapshot' );
                editor.insertHtml(unescape(value));
